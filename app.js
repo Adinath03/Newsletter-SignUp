@@ -44,7 +44,7 @@ app.post("/",function(req,res){
             res.sendFile(__dirname + "/failure.html");
         }
         response.on("data",function(data){
-            console.log(response.statusCode);
+            console.log();
         })
     })
 
@@ -56,5 +56,5 @@ app.post("/failure",function(req,res){
     res.redirect("/");
 })
 app.listen(80,function(){
-    console.log("Server started on 3000.");
+    console.log();
 })
