@@ -4,6 +4,7 @@ const request = require("request");
 const { json } = require("body-parser");
 const https = require("https");
 const app = express();
+require('dotenv').config()
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
 
@@ -33,7 +34,7 @@ app.post("/",function(req,res){
 
     const options =  {
         method: "POST",
-        auth: "adinarg:10e45226fe11e6fb7889f0f31243b9c3-us14"
+        auth: `adinarg:${process.env.MAILCHIMP_API_KEY}`
     }
 
     const request = https.request(url, options, function(response){
@@ -43,7 +44,7 @@ app.post("/",function(req,res){
             res.sendFile(__dirname + "/failure.html");
         }
         response.on("data",function(data){
-            console.log();
+            console.log(response.statusCode);
         })
     })
 
@@ -54,6 +55,6 @@ app.post("/",function(req,res){
 app.post("/failure",function(req,res){
     res.redirect("/");
 })
-app.listen(80 || 3000,function(){
+app.listen(80,function(){
     console.log("Server started on 3000.");
 })
