@@ -3,22 +3,55 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images/light-bulb.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Failure</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+            border: 1px solid #dcdcdc;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h4 {
+            font-size: 30px;
+            font-weight: bold;
+            color: #040404;
+            margin-bottom: 30px;
+        }
+        h5 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000000;
+            margin-top: 20px;
+        }
+        .success-box {
+            background-color: #e8efe9;
+            padding: 40px;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container mt-3 m-4 border">
+    <div class="container">
         <center>
-            <h4> Uh oh! </h4>
-            <div class="m-3 p-5 bg-secondary text-white">
-                <h5> There was a problem signing you up, Please try again or contact the Developer.</h5>
+            <div class="success-box">
+                <h4> Failure! </h4>
+                <h5> Oops! Something went wrong. </h5>
+                <p> Please try again later. </p>
                 <form action="/failure" method="post">
-                    <button class="btn btn-lg btn-warning" type="submit">Try me!</button>
+                    <button class="btn btn-lg btn-warning rounded-pill px-5 py-3" type="submit">Try me!</button>
                 </form>
+                
+            </div>
         </center>
-    </div>
     </div>
 </body>
 
