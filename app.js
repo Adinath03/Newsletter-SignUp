@@ -54,12 +54,6 @@ app.post("/",function(req,res){
 app.post("/failure",function(req,res){
     res.redirect("/");
 })
-app.listen(3000,function(){
+app.listen(process.env.PORT || 3000,function(){
     console.log("Server started on 3000.");
-})
-
-//Api key
-// 10e45226fe11e6fb7889f0f31243b9c3-us14
-
-//Audience id
-// d0c134c10a
+})r
