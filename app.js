@@ -1,6 +1,5 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const request = require("request");
 const { json } = require("body-parser");
 const https = require("https");
 const app = express();
@@ -55,6 +54,7 @@ app.post("/",function(req,res){
 app.post("/failure",function(req,res){
     res.redirect("/");
 })
+
 app.listen(80,function(){
     console.log();
-})
+});
